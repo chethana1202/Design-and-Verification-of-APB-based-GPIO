@@ -1,0 +1,20 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "register_tb": [
+        "register_tb",
+        "qvaeK",
+        "module",
+        2
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        3
+    ]
+}

@@ -1,0 +1,1138 @@
+# vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit mem_cov1;run -all; exit" -wlf wave_file1.wlf -l test1.log -sv_seed random work.top "+UVM_TESTNAME=test1" 
+# Start time: 15:34:48 on Nov 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "apb_slave_interface(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.1_2 linux_x86_64 Apr  2 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.interface_apb(fast)
+# Loading work.interface_aux(fast)
+# Loading work.interface_io(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.gpio_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.interface_apb(fast__2)
+# Loading work.interface_aux(fast__2)
+# Loading work.interface_io(fast__2)
+# Loading work.gpio_top(fast)
+# Loading work.apb_slave_interface(fast)
+# Loading work.register(fast)
+# Loading work.aux_interface(fast)
+# Loading work.io_interface(fast)
+# Loading work.assertions(fast)
+# Loading /home/cad/eda/Mentor_Graphics/Questasim/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# Sv_Seed = 2674014205
+#  log -r /* 
+# coverage save -onexit mem_cov1
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test test1...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               test1                       -     @482 
+#   envh                     environment                 -     @497 
+#     apb_agnth              apb_agent                   -     @550 
+#       apb_drvh             apb_driver                  -     @797 
+#         rsp_port           uvm_analysis_port           -     @812 
+#         seq_item_port      uvm_seq_item_pull_port      -     @804 
+#       apb_monh             apb_monitor                 -     @820 
+#         ap                 uvm_analysis_port           -     @827 
+#       apb_seqrh            apb_sequencer               -     @688 
+#         rsp_export         uvm_analysis_export         -     @695 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @789 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     aux_agnth              aux_agent                   -     @557 
+#       aux_drvh             aux_driver                  -     @953 
+#         rsp_port           uvm_analysis_port           -     @968 
+#         seq_item_port      uvm_seq_item_pull_port      -     @960 
+#       aux_monh             aux_monitor                 -     @976 
+#         ap                 uvm_analysis_port           -     @983 
+#       aux_seqrh            aux_sequencer               -     @844 
+#         rsp_export         uvm_analysis_export         -     @851 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @945 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     io_agnth               io_agent                    -     @564 
+#       io_drvh              io_driver                   -     @1109
+#         rsp_port           uvm_analysis_port           -     @1124
+#         seq_item_port      uvm_seq_item_pull_port      -     @1116
+#       io_monh              io_monitor                  -     @1132
+#         ap                 uvm_analysis_port           -     @1139
+#       io_seqrh             io_sequencer                -     @1000
+#         rsp_export         uvm_analysis_export         -     @1007
+#         seq_item_export    uvm_seq_item_pull_imp       -     @1101
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     sbh                    scoreboard                  -     @571 
+#       fifoh_apb            uvm_tlm_analysis_fifo #(T)  -     @1156
+#         analysis_export    uvm_analysis_imp            -     @1195
+#         get_ap             uvm_analysis_port           -     @1187
+#         get_peek_export    uvm_get_peek_imp            -     @1171
+#         put_ap             uvm_analysis_port           -     @1179
+#         put_export         uvm_put_imp                 -     @1163
+#       fifoh_aux            uvm_tlm_analysis_fifo #(T)  -     @1203
+#         analysis_export    uvm_analysis_imp            -     @1242
+#         get_ap             uvm_analysis_port           -     @1234
+#         get_peek_export    uvm_get_peek_imp            -     @1218
+#         put_ap             uvm_analysis_port           -     @1226
+#         put_export         uvm_put_imp                 -     @1210
+#       fifoh_io             uvm_tlm_analysis_fifo #(T)  -     @1250
+#         analysis_export    uvm_analysis_imp            -     @1289
+#         get_ap             uvm_analysis_port           -     @1281
+#         get_peek_export    uvm_get_peek_imp            -     @1265
+#         put_ap             uvm_analysis_port           -     @1273
+#         put_export         uvm_put_imp                 -     @1257
+#     vseqrh                 virtual_sequencer           -     @578 
+#       rsp_export           uvm_analysis_export         -     @585 
+#       seq_item_export      uvm_seq_item_pull_imp       -     @679 
+#       arbitration_queue    array                       0     -    
+#       lock_queue           array                       0     -    
+#       num_last_reqs        integral                    32    'd1  
+#       num_last_rsps        integral                    32    'd1  
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 5: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :--------------------------------
+# Name      Type       Size  Value
+# --------------------------------
+# xtn       aux_trans  -     @1317
+#   aux_in  integral   32    'h0  
+# --------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(178) @ 5: uvm_test_top.envh.sbh [APB-AUX] AUX Data sampled from scoreboard
+# :--------------------------------
+# Name      Type       Size  Value
+# --------------------------------
+# xtn       aux_trans  -     @1317
+#   aux_in  integral   32    'h0  
+# --------------------------------
+# 
+# ** Info: Assertion check is passed for ppt7
+#    Time: 5 ns Started: 5 ns  Scope: top.DUT.a1.P7 File: ../tb/assertions.sv Line: 128
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 15: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :--------------------------------
+# Name      Type       Size  Value
+# --------------------------------
+# xtn       aux_trans  -     @1444
+#   aux_in  integral   32    'h0  
+# --------------------------------
+# 
+# ** Info: Assertion check is passed for ppt7
+#    Time: 15 ns Started: 15 ns  Scope: top.DUT.a1.P7 File: ../tb/assertions.sv Line: 128
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 25: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1463     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt7
+#    Time: 25 ns Started: 25 ns  Scope: top.DUT.a1.P7 File: ../tb/assertions.sv Line: 128
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 35: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1472     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 45: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1480     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt8
+#    Time: 45 ns Started: 45 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 45 ns Started: 45 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# ** Info: Assertion check is passed for ppt1
+#    Time: 45 ns Started: 35 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 55: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1488     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../apb_agent/apb_monitor.sv(55) @ 55: uvm_test_top.envh.apb_agnth.apb_monh [apb_monitor] Data sampled from the APB Monitor
+# :---------------------------------
+# Name       Type       Size  Value
+# ---------------------------------
+# xtn        apb_trans  -     @1323
+#   presetn  integral   1     'b0  
+#   pwrite   integral   1     'b0  
+#   psel     integral   1     'b0  
+#   paddr    integral   32    'h0  
+#   penable  integral   1     'b1  
+#   pwdata   integral   32    'h0  
+#   prdata   integral   32    'h0  
+#   irq      integral   1     'b0  
+#   pready   integral   1     'b1  
+# ---------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(173) @ 55: uvm_test_top.envh.sbh [APB-SB] 
+# APB Data sampled from scoreboard
+# :---------------------------------
+# Name       Type       Size  Value
+# ---------------------------------
+# xtn        apb_trans  -     @1323
+#   presetn  integral   1     'b0  
+#   pwrite   integral   1     'b0  
+#   psel     integral   1     'b0  
+#   paddr    integral   32    'h0  
+#   penable  integral   1     'b1  
+#   pwdata   integral   32    'h0  
+#   prdata   integral   32    'h0  
+#   irq      integral   1     'b0  
+#   pready   integral   1     'b1  
+# ---------------------------------
+# 
+# ** Info: Assertion check is passed for ppt3
+#    Time: 55 ns Started: 55 ns  Scope: top.DUT.a1.P3 File: ../tb/assertions.sv Line: 108
+# ** Info: Assertion check is passed for ppt4
+#    Time: 55 ns Started: 55 ns  Scope: top.DUT.a1.P4 File: ../tb/assertions.sv Line: 113
+# ** Info: Assertion check is passed for ppt5
+#    Time: 55 ns Started: 55 ns  Scope: top.DUT.a1.P5 File: ../tb/assertions.sv Line: 118
+# ** Info: Assertion check is passed for ppt8
+#    Time: 55 ns Started: 55 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 55 ns Started: 55 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 65: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1496     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt6
+#    Time: 65 ns Started: 55 ns  Scope: top.DUT.a1.P6 File: ../tb/assertions.sv Line: 123
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 75: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1509     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt1
+#    Time: 75 ns Started: 65 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 85: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1517     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt8
+#    Time: 85 ns Started: 85 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 85 ns Started: 85 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# ** Info: Assertion check is passed for ppt1
+#    Time: 85 ns Started: 75 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 95: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1525     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../apb_agent/apb_monitor.sv(55) @ 95: uvm_test_top.envh.apb_agnth.apb_monh [apb_monitor] Data sampled from the APB Monitor
+# :---------------------------------
+# Name       Type       Size  Value
+# ---------------------------------
+# xtn        apb_trans  -     @1500
+#   presetn  integral   1     'b1  
+#   pwrite   integral   1     'b1  
+#   psel     integral   1     'b1  
+#   paddr    integral   32    'h8  
+#   penable  integral   1     'b1  
+#   pwdata   integral   32    'h0  
+#   prdata   integral   32    'h0  
+#   irq      integral   1     'b0  
+#   pready   integral   1     'b1  
+# ---------------------------------
+# 
+# ** Info: Assertion check is passed for ppt3
+#    Time: 95 ns Started: 95 ns  Scope: top.DUT.a1.P3 File: ../tb/assertions.sv Line: 108
+# ** Info: Assertion check is passed for ppt4
+#    Time: 95 ns Started: 95 ns  Scope: top.DUT.a1.P4 File: ../tb/assertions.sv Line: 113
+# ** Info: Assertion check is passed for ppt5
+#    Time: 95 ns Started: 95 ns  Scope: top.DUT.a1.P5 File: ../tb/assertions.sv Line: 118
+# ** Info: Assertion check is passed for ppt8
+#    Time: 95 ns Started: 95 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 95 ns Started: 95 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 105: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1533     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt6
+#    Time: 105 ns Started: 95 ns  Scope: top.DUT.a1.P6 File: ../tb/assertions.sv Line: 123
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 115: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1545     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt1
+#    Time: 115 ns Started: 105 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 125: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1553     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt8
+#    Time: 125 ns Started: 125 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 125 ns Started: 125 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# ** Info: Assertion check is passed for ppt1
+#    Time: 125 ns Started: 115 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 135: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1561     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../apb_agent/apb_monitor.sv(55) @ 135: uvm_test_top.envh.apb_agnth.apb_monh [apb_monitor] Data sampled from the APB Monitor
+# :--------------------------------------
+# Name       Type       Size  Value     
+# --------------------------------------
+# xtn        apb_trans  -     @1537     
+#   presetn  integral   1     'b1       
+#   pwrite   integral   1     'b1       
+#   psel     integral   1     'b1       
+#   paddr    integral   32    'h14      
+#   penable  integral   1     'b1       
+#   pwdata   integral   32    'habcdabcd
+#   prdata   integral   32    'h0       
+#   irq      integral   1     'b0       
+#   pready   integral   1     'b1       
+# --------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt3
+#    Time: 135 ns Started: 135 ns  Scope: top.DUT.a1.P3 File: ../tb/assertions.sv Line: 108
+# ** Info: Assertion check is passed for ppt4
+#    Time: 135 ns Started: 135 ns  Scope: top.DUT.a1.P4 File: ../tb/assertions.sv Line: 113
+# ** Info: Assertion check is passed for ppt5
+#    Time: 135 ns Started: 135 ns  Scope: top.DUT.a1.P5 File: ../tb/assertions.sv Line: 118
+# ** Info: Assertion check is passed for ppt8
+#    Time: 135 ns Started: 135 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 135 ns Started: 135 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# UVM_INFO ../io_agent/io_monitor.sv(39) @ 145: uvm_test_top.envh.io_agnth.io_monh [io_monitor] Data sampled from IO Monitor
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @1565     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 145: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1569     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(183) @ 145: uvm_test_top.envh.sbh [APB-IO] IO Data sampled from scoreboard
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @1565     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# 
+# =============================================== VERIFYING REGISTERS =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(254) @ 145: uvm_test_top.envh.sbh [TEST1 - Verifying RGPIO_OUT] 
+# rgpio_oe=ffffffff,rgpio_aux=0,rgpio_out=abcdabcd,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(271) @ 145: uvm_test_top.envh.sbh [TEST2 - Verifying RGPIO_AUX] 
+# rgpio_oe=ffffffff,rgpio_aux=0,aux_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(288) @ 145: uvm_test_top.envh.sbh [TEST3 - Verifying RGPIO_IN with Sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(309) @ 145: uvm_test_top.envh.sbh [TEST4 - Verifying RGPIO_IN with Extclk(postrig - inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(332) @ 145: uvm_test_top.envh.sbh [TEST5 - Verifying RGPIO_IN with Extclk(negtrig - inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 145: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(354) @ 145: uvm_test_top.envh.sbh [TEST6 - Verifying RGPIO_INTS - posedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 145: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(383) @ 145: uvm_test_top.envh.sbh [TEST7 - Verifying RGPIO_INTS - negedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 145: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(412) @ 145: uvm_test_top.envh.sbh [TEST8 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 145: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(441) @ 145: uvm_test_top.envh.sbh [TEST9 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 145: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(470) @ 145: uvm_test_top.envh.sbh [TEST12 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 145: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(502) @ 145: uvm_test_top.envh.sbh [TEST13 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(532) @ 145: uvm_test_top.envh.sbh [TEST10 - Verifying Registers with Bidirectional I/O] 
+# rgpio_oe=ffffffff,rgpio_out=abcdabcd,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(534) @ 145: uvm_test_top.envh.sbh [BIDIR SB - out] RGPIO_OUT=abcd=io_pad[15:0]
+# UVM_INFO ../tb/scoreboard.sv(535) @ 145: uvm_test_top.envh.sbh [BIDIR SB - in] RGPIO_IN=abcd=io_pad[31:16]
+# 
+# =============================================== SCOREBOARD REPORT =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(572) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST1 - RGPIO_OUT Register is verified
+# UVM_INFO ../tb/scoreboard.sv(573) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# out_seq_pass=32,out_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(588) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST2 - RGPIO_AUX Register is not verified
+# UVM_INFO ../tb/scoreboard.sv(589) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# aux_seq_pass=0,aux_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(600) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST3 - RGPIO_IN Register with Sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(601) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_sclk_pass=0,in_seq_sclk_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(611) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST4 - RGPIO_IN Register with Extclk(postrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(612) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_pos_pass=0,in_seq_eclk_pos_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(622) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST5 - RGPIO_IN Register with Extclk(negtrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(623) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_neg_pass=0,in_seq_eclk_neg_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(633) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST6 - RGPIO_INTS Register - postrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(634) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ptrig_pass=0,intr_seq_ptrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(644) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST7 - RGPIO_INTS Register - negtrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(645) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ntrig_pass=0,intr_seq_ntrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(655) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST8 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(656) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass1=0,intr_seq_eclk_ptrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(666) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST9 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(667) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass2=0,intr_seq_eclk_ptrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(677) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST12 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(678) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass1=0,intr_seq_eclk_ntrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(688) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST13 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(689) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass2=0,intr_seq_eclk_ntrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(699) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# TEST10 - Registers with Bidirectional I/O not verified
+# UVM_INFO ../tb/scoreboard.sv(700) @ 145: uvm_test_top.envh.sbh [scoreboard] 
+# bidir_io_out_pass=32,bidir_io_in_pass=0,bidir_io_out_err=0,bidir_io_in_err=0
+# 
+# 
+# ====================================================================================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(173) @ 145: uvm_test_top.envh.sbh [APB-SB] 
+# APB Data sampled from scoreboard
+# :---------------------------------
+# Name       Type       Size  Value
+# ---------------------------------
+# xtn        apb_trans  -     @1500
+#   presetn  integral   1     'b1  
+#   pwrite   integral   1     'b1  
+#   psel     integral   1     'b1  
+#   paddr    integral   32    'h8  
+#   penable  integral   1     'b1  
+#   pwdata   integral   32    'h0  
+#   prdata   integral   32    'h0  
+#   irq      integral   1     'b0  
+#   pready   integral   1     'b1  
+# ---------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(178) @ 145: uvm_test_top.envh.sbh [APB-AUX] AUX Data sampled from scoreboard
+# :--------------------------------
+# Name      Type       Size  Value
+# --------------------------------
+# xtn       aux_trans  -     @1444
+#   aux_in  integral   32    'h0  
+# --------------------------------
+# 
+# ** Info: Assertion check is passed for ppt6
+#    Time: 145 ns Started: 135 ns  Scope: top.DUT.a1.P6 File: ../tb/assertions.sv Line: 123
+# UVM_INFO ../io_agent/io_monitor.sv(39) @ 155: uvm_test_top.envh.io_agnth.io_monh [io_monitor] Data sampled from IO Monitor
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @1577     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 155: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1581     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(183) @ 155: uvm_test_top.envh.sbh [APB-IO] IO Data sampled from scoreboard
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @1577     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# 
+# =============================================== VERIFYING REGISTERS =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(254) @ 155: uvm_test_top.envh.sbh [TEST1 - Verifying RGPIO_OUT] 
+# rgpio_oe=ffffffff,rgpio_aux=0,rgpio_out=abcdabcd,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(271) @ 155: uvm_test_top.envh.sbh [TEST2 - Verifying RGPIO_AUX] 
+# rgpio_oe=ffffffff,rgpio_aux=0,aux_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(288) @ 155: uvm_test_top.envh.sbh [TEST3 - Verifying RGPIO_IN with Sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(309) @ 155: uvm_test_top.envh.sbh [TEST4 - Verifying RGPIO_IN with Extclk(postrig - inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(332) @ 155: uvm_test_top.envh.sbh [TEST5 - Verifying RGPIO_IN with Extclk(negtrig - inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 155: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(354) @ 155: uvm_test_top.envh.sbh [TEST6 - Verifying RGPIO_INTS - posedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 155: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(383) @ 155: uvm_test_top.envh.sbh [TEST7 - Verifying RGPIO_INTS - negedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 155: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(412) @ 155: uvm_test_top.envh.sbh [TEST8 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 155: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(441) @ 155: uvm_test_top.envh.sbh [TEST9 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 155: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(470) @ 155: uvm_test_top.envh.sbh [TEST12 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 155: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(502) @ 155: uvm_test_top.envh.sbh [TEST13 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(532) @ 155: uvm_test_top.envh.sbh [TEST10 - Verifying Registers with Bidirectional I/O] 
+# rgpio_oe=ffffffff,rgpio_out=abcdabcd,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(534) @ 155: uvm_test_top.envh.sbh [BIDIR SB - out] RGPIO_OUT=abcd=io_pad[15:0]
+# UVM_INFO ../tb/scoreboard.sv(535) @ 155: uvm_test_top.envh.sbh [BIDIR SB - in] RGPIO_IN=abcd=io_pad[31:16]
+# 
+# =============================================== SCOREBOARD REPORT =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(572) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST1 - RGPIO_OUT Register is verified
+# UVM_INFO ../tb/scoreboard.sv(573) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# out_seq_pass=64,out_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(588) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST2 - RGPIO_AUX Register is not verified
+# UVM_INFO ../tb/scoreboard.sv(589) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# aux_seq_pass=0,aux_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(600) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST3 - RGPIO_IN Register with Sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(601) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_sclk_pass=0,in_seq_sclk_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(611) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST4 - RGPIO_IN Register with Extclk(postrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(612) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_pos_pass=0,in_seq_eclk_pos_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(622) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST5 - RGPIO_IN Register with Extclk(negtrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(623) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_neg_pass=0,in_seq_eclk_neg_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(633) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST6 - RGPIO_INTS Register - postrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(634) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ptrig_pass=0,intr_seq_ptrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(644) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST7 - RGPIO_INTS Register - negtrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(645) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ntrig_pass=0,intr_seq_ntrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(655) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST8 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(656) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass1=0,intr_seq_eclk_ptrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(666) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST9 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(667) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass2=0,intr_seq_eclk_ptrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(677) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST12 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(678) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass1=0,intr_seq_eclk_ntrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(688) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST13 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(689) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass2=0,intr_seq_eclk_ntrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(699) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# TEST10 - Registers with Bidirectional I/O not verified
+# UVM_INFO ../tb/scoreboard.sv(700) @ 155: uvm_test_top.envh.sbh [scoreboard] 
+# bidir_io_out_pass=64,bidir_io_in_pass=0,bidir_io_out_err=0,bidir_io_in_err=0
+# 
+# 
+# ====================================================================================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(173) @ 155: uvm_test_top.envh.sbh [APB-SB] 
+# APB Data sampled from scoreboard
+# :--------------------------------------
+# Name       Type       Size  Value     
+# --------------------------------------
+# xtn        apb_trans  -     @1537     
+#   presetn  integral   1     'b1       
+#   pwrite   integral   1     'b1       
+#   psel     integral   1     'b1       
+#   paddr    integral   32    'h14      
+#   penable  integral   1     'b1       
+#   pwdata   integral   32    'habcdabcd
+#   prdata   integral   32    'h0       
+#   irq      integral   1     'b0       
+#   pready   integral   1     'b1       
+# --------------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(178) @ 155: uvm_test_top.envh.sbh [APB-AUX] AUX Data sampled from scoreboard
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1463     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt1
+#    Time: 155 ns Started: 145 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../io_agent/io_monitor.sv(39) @ 165: uvm_test_top.envh.io_agnth.io_monh [io_monitor] Data sampled from IO Monitor
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @1865     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 165: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1869     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(183) @ 165: uvm_test_top.envh.sbh [APB-IO] IO Data sampled from scoreboard
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @1865     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# 
+# =============================================== VERIFYING REGISTERS =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(254) @ 165: uvm_test_top.envh.sbh [TEST1 - Verifying RGPIO_OUT] 
+# rgpio_oe=ffffffff,rgpio_aux=0,rgpio_out=abcdabcd,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(271) @ 165: uvm_test_top.envh.sbh [TEST2 - Verifying RGPIO_AUX] 
+# rgpio_oe=ffffffff,rgpio_aux=0,aux_in=83165ae4,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(288) @ 165: uvm_test_top.envh.sbh [TEST3 - Verifying RGPIO_IN with Sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(309) @ 165: uvm_test_top.envh.sbh [TEST4 - Verifying RGPIO_IN with Extclk(postrig - inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(332) @ 165: uvm_test_top.envh.sbh [TEST5 - Verifying RGPIO_IN with Extclk(negtrig - inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 165: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(354) @ 165: uvm_test_top.envh.sbh [TEST6 - Verifying RGPIO_INTS - posedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 165: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(383) @ 165: uvm_test_top.envh.sbh [TEST7 - Verifying RGPIO_INTS - negedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 165: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(412) @ 165: uvm_test_top.envh.sbh [TEST8 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 165: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(441) @ 165: uvm_test_top.envh.sbh [TEST9 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 165: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(470) @ 165: uvm_test_top.envh.sbh [TEST12 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 165: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(502) @ 165: uvm_test_top.envh.sbh [TEST13 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(532) @ 165: uvm_test_top.envh.sbh [TEST10 - Verifying Registers with Bidirectional I/O] 
+# rgpio_oe=ffffffff,rgpio_out=abcdabcd,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(534) @ 165: uvm_test_top.envh.sbh [BIDIR SB - out] RGPIO_OUT=abcd=io_pad[15:0]
+# UVM_INFO ../tb/scoreboard.sv(535) @ 165: uvm_test_top.envh.sbh [BIDIR SB - in] RGPIO_IN=abcd=io_pad[31:16]
+# 
+# =============================================== SCOREBOARD REPORT =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(572) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST1 - RGPIO_OUT Register is verified
+# UVM_INFO ../tb/scoreboard.sv(573) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# out_seq_pass=96,out_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(588) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST2 - RGPIO_AUX Register is not verified
+# UVM_INFO ../tb/scoreboard.sv(589) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# aux_seq_pass=0,aux_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(600) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST3 - RGPIO_IN Register with Sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(601) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_sclk_pass=0,in_seq_sclk_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(611) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST4 - RGPIO_IN Register with Extclk(postrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(612) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_pos_pass=0,in_seq_eclk_pos_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(622) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST5 - RGPIO_IN Register with Extclk(negtrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(623) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_neg_pass=0,in_seq_eclk_neg_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(633) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST6 - RGPIO_INTS Register - postrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(634) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ptrig_pass=0,intr_seq_ptrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(644) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST7 - RGPIO_INTS Register - negtrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(645) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ntrig_pass=0,intr_seq_ntrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(655) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST8 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(656) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass1=0,intr_seq_eclk_ptrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(666) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST9 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(667) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass2=0,intr_seq_eclk_ptrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(677) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST12 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(678) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass1=0,intr_seq_eclk_ntrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(688) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST13 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(689) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass2=0,intr_seq_eclk_ntrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(699) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# TEST10 - Registers with Bidirectional I/O not verified
+# UVM_INFO ../tb/scoreboard.sv(700) @ 165: uvm_test_top.envh.sbh [scoreboard] 
+# bidir_io_out_pass=96,bidir_io_in_pass=0,bidir_io_out_err=0,bidir_io_in_err=0
+# 
+# 
+# ====================================================================================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(178) @ 165: uvm_test_top.envh.sbh [APB-AUX] AUX Data sampled from scoreboard
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1472     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt8
+#    Time: 165 ns Started: 165 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 165 ns Started: 165 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# ** Info: Assertion check is passed for ppt1
+#    Time: 165 ns Started: 155 ns  Scope: top.DUT.a1.P1 File: ../tb/assertions.sv Line: 98
+# UVM_INFO ../io_agent/io_monitor.sv(39) @ 175: uvm_test_top.envh.io_agnth.io_monh [io_monitor] Data sampled from IO Monitor
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @2153     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# UVM_INFO ../aux_agent/aux_monitor.sv(37) @ 175: uvm_test_top.envh.aux_agnth.aux_monh [aux_monitor] Data sampled from the AUX monitor
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @2157     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# UVM_INFO ../apb_agent/apb_monitor.sv(55) @ 175: uvm_test_top.envh.apb_agnth.apb_monh [apb_monitor] Data sampled from the APB Monitor
+# :--------------------------------------
+# Name       Type       Size  Value     
+# --------------------------------------
+# xtn        apb_trans  -     @1573     
+#   presetn  integral   1     'b1       
+#   pwrite   integral   1     'b1       
+#   psel     integral   1     'b1       
+#   paddr    integral   32    'h4       
+#   penable  integral   1     'b1       
+#   pwdata   integral   32    'h8a12330e
+#   prdata   integral   32    'h0       
+#   irq      integral   1     'b0       
+#   pready   integral   1     'b1       
+# --------------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(183) @ 175: uvm_test_top.envh.sbh [APB-IO] IO Data sampled from scoreboard
+# :------------------------------------
+# Name      Type      Size  Value     
+# ------------------------------------
+# xtn       io_trans  -     @2153     
+#   io_pad  integral  32    'habcdabcd
+# ------------------------------------
+# 
+# UVM_INFO ../tb/scoreboard.sv(173) @ 175: uvm_test_top.envh.sbh [APB-SB] 
+# APB Data sampled from scoreboard
+# :--------------------------------------
+# Name       Type       Size  Value     
+# --------------------------------------
+# xtn        apb_trans  -     @1573     
+#   presetn  integral   1     'b1       
+#   pwrite   integral   1     'b1       
+#   psel     integral   1     'b1       
+#   paddr    integral   32    'h4       
+#   penable  integral   1     'b1       
+#   pwdata   integral   32    'h8a12330e
+#   prdata   integral   32    'h0       
+#   irq      integral   1     'b0       
+#   pready   integral   1     'b1       
+# --------------------------------------
+# 
+# 
+# =============================================== VERIFYING REGISTERS =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(254) @ 175: uvm_test_top.envh.sbh [TEST1 - Verifying RGPIO_OUT] 
+# rgpio_oe=ffffffff,rgpio_aux=0,rgpio_out=abcdabcd,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(271) @ 175: uvm_test_top.envh.sbh [TEST2 - Verifying RGPIO_AUX] 
+# rgpio_oe=ffffffff,rgpio_aux=0,aux_in=83165ae4,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(288) @ 175: uvm_test_top.envh.sbh [TEST3 - Verifying RGPIO_IN with Sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(309) @ 175: uvm_test_top.envh.sbh [TEST4 - Verifying RGPIO_IN with Extclk(postrig - inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(332) @ 175: uvm_test_top.envh.sbh [TEST5 - Verifying RGPIO_IN with Extclk(negtrig - inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 175: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(354) @ 175: uvm_test_top.envh.sbh [TEST6 - Verifying RGPIO_INTS - posedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 175: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(383) @ 175: uvm_test_top.envh.sbh [TEST7 - Verifying RGPIO_INTS - negedge triggered interrupts with sysclk] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 175: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(412) @ 175: uvm_test_top.envh.sbh [TEST8 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 175: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(441) @ 175: uvm_test_top.envh.sbh [TEST9 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 175: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(470) @ 175: uvm_test_top.envh.sbh [TEST12 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at posedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(240) @ 175: uvm_test_top.envh.sbh [SB - ints_ref_model_logic] extc_in=abcdabcd,in_mux=abcdabcd,rgpio_ints_e=0
+# UVM_INFO ../tb/scoreboard.sv(502) @ 175: uvm_test_top.envh.sbh [TEST13 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at negedge)] 
+# rgpio_oe=ffffffff,rgpio_eclk=0,rgpio_nec=0,rgpio_ptrig=0,rgpio_inte=0,rgpio_ctrl=0,rgpio_in=0,rgpio_ints=0,prev_io_pad=ffffffff,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(532) @ 175: uvm_test_top.envh.sbh [TEST10 - Verifying Registers with Bidirectional I/O] 
+# rgpio_oe=ffffffff,rgpio_out=abcdabcd,rgpio_in=0,io_pad=abcdabcd
+# 
+# UVM_INFO ../tb/scoreboard.sv(534) @ 175: uvm_test_top.envh.sbh [BIDIR SB - out] RGPIO_OUT=abcd=io_pad[15:0]
+# UVM_INFO ../tb/scoreboard.sv(535) @ 175: uvm_test_top.envh.sbh [BIDIR SB - in] RGPIO_IN=abcd=io_pad[31:16]
+# 
+# =============================================== SCOREBOARD REPORT =================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(572) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST1 - RGPIO_OUT Register is verified
+# UVM_INFO ../tb/scoreboard.sv(573) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# out_seq_pass=128,out_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(588) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST2 - RGPIO_AUX Register is not verified
+# UVM_INFO ../tb/scoreboard.sv(589) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# aux_seq_pass=0,aux_seq_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(600) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST3 - RGPIO_IN Register with Sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(601) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_sclk_pass=0,in_seq_sclk_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(611) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST4 - RGPIO_IN Register with Extclk(postrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(612) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_pos_pass=0,in_seq_eclk_pos_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(622) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST5 - RGPIO_IN Register with Extclk(negtrig) is not verified
+# UVM_INFO ../tb/scoreboard.sv(623) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# in_seq_eclk_neg_pass=0,in_seq_eclk_neg_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(633) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST6 - RGPIO_INTS Register - postrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(634) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ptrig_pass=0,intr_seq_ptrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(644) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST7 - RGPIO_INTS Register - negtrig interrupts with sysclk is not verified
+# UVM_INFO ../tb/scoreboard.sv(645) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_ntrig_pass=0,intr_seq_ntrig_err=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(655) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST8 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(656) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass1=0,intr_seq_eclk_ptrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(666) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST9 - RGPIO_INTS Register - postrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(667) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ptrig_pass2=0,intr_seq_eclk_ptrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(677) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST12 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at posedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(678) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass1=0,intr_seq_eclk_ntrig_err1=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(688) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST13 - RGPIO_INTS Register - negtrig interrupts with eclk(inmux at negedge) is not verified
+# UVM_INFO ../tb/scoreboard.sv(689) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# intr_seq_eclk_ntrig_pass2=0,intr_seq_eclk_ntrig_err2=0
+# 
+# 
+# UVM_ERROR ../tb/scoreboard.sv(699) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# TEST10 - Registers with Bidirectional I/O not verified
+# UVM_INFO ../tb/scoreboard.sv(700) @ 175: uvm_test_top.envh.sbh [scoreboard] 
+# bidir_io_out_pass=128,bidir_io_in_pass=0,bidir_io_out_err=0,bidir_io_in_err=0
+# 
+# 
+# ====================================================================================================================================
+# 
+# UVM_INFO ../tb/scoreboard.sv(178) @ 175: uvm_test_top.envh.sbh [APB-AUX] AUX Data sampled from scoreboard
+# :-------------------------------------
+# Name      Type       Size  Value     
+# -------------------------------------
+# xtn       aux_trans  -     @1480     
+#   aux_in  integral   32    'h83165ae4
+# -------------------------------------
+# 
+# ** Info: Assertion check is passed for ppt3
+#    Time: 175 ns Started: 175 ns  Scope: top.DUT.a1.P3 File: ../tb/assertions.sv Line: 108
+# ** Info: Assertion check is passed for ppt4
+#    Time: 175 ns Started: 175 ns  Scope: top.DUT.a1.P4 File: ../tb/assertions.sv Line: 113
+# ** Info: Assertion check is passed for ppt5
+#    Time: 175 ns Started: 175 ns  Scope: top.DUT.a1.P5 File: ../tb/assertions.sv Line: 118
+# ** Info: Assertion check is passed for ppt8
+#    Time: 175 ns Started: 175 ns  Scope: top.DUT.a1.P8 File: ../tb/assertions.sv Line: 133
+# ** Info: Assertion check is passed for ppt2
+#    Time: 175 ns Started: 175 ns  Scope: top.DUT.a1.P2 File: ../tb/assertions.sv Line: 103
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 185: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  176
+# UVM_WARNING :    0
+# UVM_ERROR :   44
+# UVM_FATAL :    0
+# ** Report counts by id
+# [APB-AUX]     5
+# [APB-IO]     4
+# [APB-SB]     4
+# [BIDIR SB - in]     4
+# [BIDIR SB - out]     4
+# [Questa UVM]     2
+# [RNTST]     1
+# [SB - ints_ref_model_logic]    24
+# [TEST1 - Verifying RGPIO_OUT]     4
+# [TEST10 - Verifying Registers with Bidirectional I/O]     4
+# [TEST12 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at posedge)]     4
+# [TEST13 - Verifying RGPIO_INTS - negedge triggered interrupts with eclk(inmux at negedge)]     4
+# [TEST2 - Verifying RGPIO_AUX]     4
+# [TEST3 - Verifying RGPIO_IN with Sysclk]     4
+# [TEST4 - Verifying RGPIO_IN with Extclk(postrig - inmux at posedge)]     4
+# [TEST5 - Verifying RGPIO_IN with Extclk(negtrig - inmux at negedge)]     4
+# [TEST6 - Verifying RGPIO_INTS - posedge triggered interrupts with sysclk]     4
+# [TEST7 - Verifying RGPIO_INTS - negedge triggered interrupts with sysclk]     4
+# [TEST8 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at posedge)]     4
+# [TEST9 - Verifying RGPIO_INTS - posedge triggered interrupts with eclk(inmux at negedge)]     4
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [apb_monitor]     4
+# [aux_monitor]    18
+# [io_monitor]     4
+# [scoreboard]    96
+# ** Note: $finish    : /home/cad/eda/Mentor_Graphics/Questasim/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 185 ns  Iteration: 54  Instance: /top
+# Saving coverage database on exit...
+# End time: 15:34:52 on Nov 19,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 2
