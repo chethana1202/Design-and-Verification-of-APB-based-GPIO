@@ -1,2 +1,0 @@
-var g_data = {"21":{"pr":"/top/DUT/a1","ty":2,"dui":11,"dun":"work.assertions","direct":[{"n":["A1"],"h":7},{"n":["A2"],"h":8},{"n":["A3"],"h":4},{"n":["A4"],"h":4},{"n":["A5"],"h":4},{"n":["A6"],"h":3},{"n":["A7"],"h":3},{"n":["A8"],"h":8}]}};
-processDirectivesData(g_data);
